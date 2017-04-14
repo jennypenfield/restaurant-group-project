@@ -14,4 +14,4 @@ The Mongol empire was not simply about conquest, destruction, and the devastatio
 
 **Rationale**
 The concept gives an obvious starting point for images, text and recipe items.  I'm thinking that the inside restaurant photo might be one of those barbaric feast images from B-movies ("Genghis Khan, Attila the Hun, what's the difference?") .
-The [early] steppe people ate horses and drank horse blood - this allows for some disgusting specials and house specialties.
+The [early] steppe people ate horses and drank horse blood - this allows for some disgusting specials and house specialties.  
