@@ -1,0 +1,52 @@
+.main{
+  background-color:#e6ffff;
+  width:210px;
+  border-radius:5%;
+  border:2px solid teal;
+}
+
+.tables{
+  width:200px;
+  margin-left: 5px;
+  user-select: none;
+  display:inline-block;
+}
+
+.box {
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.box:hover{
+  box-shadow: 2px 2px 2px tomato;
+}
+
+#reserv{
+  display: block;
+  margin: 5px 5px 0px 5px;
+}
+
+#reserv:hover{
+  color:teal;
+}
+
+.space{
+  height:10px;
+}
+
+button{
+  display:block;
+  margin: 5px;
+}
+
+p{
+  margin-left: 5px;
+  font-family: helvetica;
+}
+
+h3{
+  margin-left: 5px;
+  font-family: helvetica;
+}
