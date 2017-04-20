@@ -2,6 +2,7 @@ var containerNode = document.querySelector('.tables')
 
 containerNode.addEventListener('click', function (inputEvent) {
   if (inputEvent.target.className !== 'box') return
+
   var currentBackground = inputEvent.target.style.background
   inputEvent.target.style.background = currentBackground === 'tomato' ? '#e6ffff' : 'tomato'
   if (currentBackground === 'tomato') {
