@@ -12,9 +12,15 @@ body {
 }
 
 header {
-  background-image: linear-gradient(#2d004d, #4b0082);
+  background-image: linear-gradient(#92140c, #bd1b0f);
+  box-shadow: 0 0 1em 0.5em #353238;
   color: #fff;
-  flex: 1;
+  padding: 2em;
+  text-align: center;
+}
+
+#logo {
+  height: 100px;
 }
 
 #photoBox {
