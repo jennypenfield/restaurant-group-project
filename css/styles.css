@@ -30,7 +30,23 @@ header {
 
 #newsSpecialLocation {
   border-bottom: 1px gray solid;
+  display: flex;
   flex: 2;
+}
+
+#news {
+  border-right: 1px gray solid;
+  flex: 1;
+}
+
+#specials {
+  border-right: 1px gray solid;
+  flex: 1;
+}
+
+#location {
+  border-right: 1px gray solid;
+  flex: 1;
 }
 
 #tabsAndPhotos {
