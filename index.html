@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset='utf-8'>
+  <meta http-equiv='x-ua-compatible' content='ie=edge'>
   <title>Subedei</title>
-  <meta name="description" content="">
-  <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <link rel="stylesheet" type="text/css" href="./css/reservationStyles.css">
+  <meta name='description' content=''>
+  <link rel='stylesheet' type='text/css' href='./css/styles.css'>
+  <link rel='stylesheet' type='text/css' href='./css/reservationStyles.css'>
 </head>
 
 <body>
-<div id="flexContainer">
+<div id='flexContainer'>
   <header>
-    <img id="logo" src="./img/logo.png" alt="Subedei logo">
+    <img id='logo' src='./img/logo.png' alt='Subedei logo'>
+    <div class="social-media">
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <i class="fa fa-facebook-square" aria-hidden="true"></i>
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+    </div>
   </header>
-  <div id="photoBox">
+  <div id='mainImg'>
   </div>
-  <div id="newsSpecialLocation">
-    <div id="news"></div>
-    <div id="specials"></div>
-    <div id="location"></div>
+  <div id='newsSpecialLocation'>
+    <div id='news'></div>
+    <div id='dailySpecial'></div>
+    <div id='location'></div>
   </div>
-  <div id="tabsAndPhotos">
-    <div class='main'>
-      <h3>Reservations</h3>
-      <div class='inputContainer'>
-        <input type='text' id='reserv' value='Name'>
-        <input type='text' id='reserv' value='Email'>
-        <input type='text' id='reserv' value='Phone'>
-      </div>
-      <div class='housing'>
-        <p>Please select your table</p>
-        <div class='tables' id="tableContainer">
-          <div class="table selected" id="table_1"></div>
-          <div class="table" id="table_2"></div>
-          <div class="table" id="table_3"></div>
-          <div class="table" id="table_4"></div>
-          <div class="table" id="table_5"></div>
-          <div class="table selected" id="table_6"></div>
-          <div class="table" id="table_7"></div>
-          <div class="table" id="table_8"></div>
-          <div class="table" id="table_9"></div>
-          <div class="table" id="table_10"></div>
-          <div class="table" id="table_11"></div>
-          <div class="table" id="table_12"></div>
-          <div class="table" id="table_13"></div>
-          <div class="table" id="table_14"></div>
-          <div class="table" id="table_15"></div>
-          <div class="table" id="table_16"></div>
-          <div class="table" id="table_17"></div>
-          <div class="table" id="table_18"></div>
-          <div class="space"></div>
-          <div class="table" id="table_19"></div>
-          <div class="table" id="table_20"></div>
-          <div class="table" id="table_21"></div>
-          <div class="table" id="table_22"></div>
-          <div class="table" id="table_23"></div>
-          <div class="table" id="table_24"></div>
-          <div class="table" id="table_25"></div>
-          <div class="table" id="table_26"></div>
-          <div class="table" id="table_27"></div>
-          <div class="table" id="table_28"></div>
-          <div class="table" id="table_29"></div>
-          <div class="table" id="table_30"></div>
-          <div class="table" id="table_31"></div>
-          <div class="table" id="table_32"></div>
-          <div class="table" id="table_33"></div>
-          <div class="table" id="table_34"></div>
-          <div class="table" id="table_35"></div>
-          <div class="table" id="table_36"></div>
+  <div id='tabsAndPhotos'>
+    <div id='tabsBox'>
+      <div id='ourStoryTab'></div>
+      <div id='menuTab'></div>
+      <div id='reservations'>
+        <h3>Reservations</h3>
+        <div class='inputContainer'>
+          <input type='text' id='reserv' value='Name'>
+          <input type='text' id='reserv' value='Email'>
+          <input type='text' id='reserv' value='Phone'>
         </div>
-        <button type='submit' id='submit'>Submit</button>
+        <div class='housing'>
+          <p>Please select your table</p>
+          <div class='tables' id='tableContainer'>
+            <div class='table' id='table_1'></div>
+            <div class='table' id='table_2'></div>
+            <div class='table' id='table_3'></div>
+            <div class='table' id='table_4'></div>
+            <div class='table' id='table_5'></div>
+            <div class='table' id='table_6'></div>
+            <div class='table' id='table_7'></div>
+            <div class='table' id='table_8'></div>
+            <div class='table' id='table_9'></div>
+            <div class='table' id='table_10'></div>
+            <div class='table' id='table_11'></div>
+            <div class='table' id='table_12'></div>
+            <div class='table' id='table_13'></div>
+            <div class='table' id='table_14'></div>
+            <div class='table' id='table_15'></div>
+            <div class='table' id='table_16'></div>
+            <div class='table' id='table_17'></div>
+            <div class='table' id='table_18'></div>
+            <div class='space'></div>
+            <div class='table' id='table_19'></div>
+            <div class='table' id='table_20'></div>
+            <div class='table' id='table_21'></div>
+            <div class='table' id='table_22'></div>
+            <div class='table' id='table_23'></div>
+            <div class='table' id='table_24'></div>
+            <div class='table' id='table_25'></div>
+            <div class='table' id='table_26'></div>
+            <div class='table' id='table_27'></div>
+            <div class='table' id='table_28'></div>
+            <div class='table' id='table_29'></div>
+            <div class='table' id='table_30'></div>
+            <div class='table' id='table_31'></div>
+            <div class='table' id='table_32'></div>
+            <div class='table' id='table_33'></div>
+            <div class='table' id='table_34'></div>
+            <div class='table' id='table_35'></div>
+            <div class='table' id='table_36'></div>
+          </div>
+          <button type='submit' id='submit'>Submit</button>
+        </div>
       </div>
     </div>
-    <div id="photosRight">
+    <div id='photosRight'>
+      <div id='rightPhoto1'></div>
+      <div id='rightPhoto2'></div>
+      <div id='rightPhoto3'></div>
     </div>
   </div>
   <footer>
   </footer>
 </div>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src='js/jquery-3.2.1.min.js'></script>
+  <script src='js/main.js'></script>
 </body>
 </html>
