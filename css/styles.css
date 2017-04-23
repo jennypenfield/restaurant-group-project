@@ -28,10 +28,9 @@ header {
   font-size: 4em;
   position: absolute;
   right: 30px;
-  top: 40px;
 }
 
-a:link {
+a .fa {
   color: white;
 }
 
@@ -53,21 +52,25 @@ a:link {
 #newsContainer {
   border-right: 1px gray solid;
   flex: 1;
+  padding: 10px;
 }
 /*~~~~~~~Start - News CSS added by Andrew~~~~~~~*/
   #newsHead {
-    width: 1
-    font: italic bold;
-    flex-wrap: wrap;
-    border: 2px;
+    font-family: 'Helvetica';
+    font-size: 2em;
+    text-align: center;
   }
+
   #newsDate {
-    text-align: right;
-    width: 1
+    font-family: 'Helvetica';
+    font-size: 2em;
+    text-align: center;
   }
-  }
+
   #newsContent {
     border: 2px;
+    text-align: justify;
+  }
 /*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
 
 
@@ -120,22 +123,22 @@ a:link {
 
 #rightPhoto1 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
 #rightPhoto2 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
 #rightPhoto3 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
-footer {
+#footer {
   flex: 1;
 }
