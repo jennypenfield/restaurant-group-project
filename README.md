@@ -4,6 +4,8 @@
 
 <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 
+[View on gh-pages]('')
+
 ## Objective
 
 Create a responsive, one-page website that gives visitors as much info about the restaurant as possible.
@@ -17,9 +19,8 @@ Create a responsive, one-page website that gives visitors as much info about the
 * Google Map with location, directions, and the restaurant's address.
 * Tabbed section containing the "About Subedei" section, a mock reservation form, and the menu.
 * Our menu is broken up into three categories. The restaurant only serves dinner, but we pulled in appetizers, main courses, and a-la cart items individually from the API.
-* There are three smaller photos of food on the right side of the page pulled from Flickr API.
 * There is a comments/review section that is similar to Disqus.
-* Menu Item Info Blocks (Each of our food items has special notes on it, and if a note matches, then the icon should be displayed. Also, there is a hover state that will need to show basic information about the note. This will be the same for all items and here is a breakdown of that.
+* Menu Item Info Blocks (Each of our food items has special notes on it, and if a note matches, then the icon will be displayed. Also, there is a hover state that shows basic information about the note:
 
   * Allergy Info (This item may contain shellfish or another item that some people may be allergic to. Please ask your waiter or waitress for assistance.)
   * Restaurant Favorite (We have been doing this a long time and this item has become one of our favorites.)
