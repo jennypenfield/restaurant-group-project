@@ -10,7 +10,8 @@ function clickTable (evt) {
 
 $('#tableContainer').on('click', '.table', clickTable)
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1800104bf8400142b341d84f76471c7a&text=grill+mongolian&per_page=1000&format=json&nojsoncallback=1&api_sig=340b7e6535c957ff6522c97a2f0868f2'
+/* Flickr API for all photos */
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=188843a1a5f0b6cd12b9346dc0f9cc81&text=grill+mongolian&per_page=1000&format=json&nojsoncallback=1'
 $.getJSON(flickrAPI).done(getFlickrData).fail(function (e) {
   console.log('There was an error. Try again.', e)
 })
@@ -61,6 +62,27 @@ function fetchNews () {
 
 fetchNews()
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-END of Latest News Box (Andrew)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Tabs area to show 'About Subedei', 'Mongol Menu', or 'Reservations' */
+var $menuBody = $('#menuBody')
+$menuBody.hide()
+var $reservationsBody = $('#reservationsBody')
+$reservationsBody.hide()
+var $aboutSubedeiBody = $('#aboutSubedeiBody')
+
+$('#aboutSubedeiTab').on('click', function () {
+  $aboutSubedeiBody.show()
+  $menuBody.hide()
+  $reservationsBody.hide()
+})
+
+$('#menuTab').on('click', function () {
+  $aboutSubedeiBody.hide()
+  $menuBody.show()
+  $reservationsBody.hide()
+})
+
+$('#reservationsTab').on('click', function () {
+  $aboutSubedeiBody.hide()
+  $menuBody.hide()
+  $reservationsBody.show()
+})
