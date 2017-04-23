@@ -30,33 +30,33 @@ header {
   top: 30%;
   right: 10px; }
 
-#mainImg {
+#mainImgContainer {
   border-bottom: 1px gray solid;
   flex: 2;
 }
 
-#newsSpecialLocation {
+#newsSpecialLocationContainer {
   border-bottom: 1px gray solid;
   display: flex;
   flex: 2;
 }
 
-#news {
+#newsContainer {
   border-right: 1px gray solid;
   flex: 1;
 }
 
-#dailySpecial {
+#dailySpecialContainer {
   border-right: 1px gray solid;
   flex: 1;
 }
 
-#location {
+#locationContainer {
   border-right: 1px gray solid;
   flex: 1;
 }
 
-#tabsAndPhotos {
+#tabsAndPhotosContainer {
   border-bottom: 1px gray solid;
   display: flex;
   flex-direction: row;
@@ -68,7 +68,7 @@ header {
   flex: 3;
 }
 
-#photosRight {
+#photosRightContainer {
   display: flex;
   flex: 1;
   flex-direction: column;

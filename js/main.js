@@ -9,17 +9,18 @@ function clickTable (evt) {
 
 $('#tableContainer').on('click', '.table', clickTable)
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=393b9da4a2e761797b387b39cae61243&text=mongolian+restaurant+noodles&format=json&nojsoncallback=1&api_sig=b9ec9bcd35d39158746d766e7a5dfcaa'
-$.get(flickrAPI).done(getFlickrData).fail(function (e) {
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1800104bf8400142b341d84f76471c7a&text=mongolian+restaurant+noodles&format=json&nojsoncallback=1&api_sig=6fe5853584e79c18b7f630e1c43395f0'
+$.getJSON(flickrAPI).done(getFlickrData).fail(function (e) {
   console.log('There was an error. Try again.', e)
 })
 
 function getFlickrData (data) {
-  console.log(data)
-  var randomIndex = Math.floor(Math.random() * 128)
+  // console.log(data)
+  var randomIndex = Math.floor(Math.random() * 100)
+  console.log(randomIndex)
   placeImage(data, randomIndex, '#mainImg')
-  placeImage(data, randomIndex, '#dailySpecial')
-  placeImage(data, randomIndex, '#secondRestaurantPhoto')
+  placeImage(data, randomIndex, '#dailySpecialImg')
+  placeImage(data, randomIndex, '#smallRestaurantPhoto')
   placeImage(data, randomIndex, '#rightPhoto1')
   placeImage(data, randomIndex, '#rightPhoto2')
   placeImage(data, randomIndex, '#rightPhoto3')
@@ -31,5 +32,6 @@ function placeImage (data, num, imgEl) {
   var server = data.photos.photo[num].server
   var farm = data.photos.photo[num].farm
 
-  $('#mainImg').src('https://farm' + farm + '.staticflickr.com/' + id + '/' + server + '_' + secret + '.jpg')
+  var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
+  $(imgEl).attr('src', imgUrl)
 }
