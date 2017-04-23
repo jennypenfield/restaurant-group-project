@@ -9,21 +9,20 @@ function clickTable (evt) {
 
 $('#tableContainer').on('click', '.table', clickTable)
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1800104bf8400142b341d84f76471c7a&text=mongolian+restaurant+noodles&format=json&nojsoncallback=1&api_sig=6fe5853584e79c18b7f630e1c43395f0'
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1800104bf8400142b341d84f76471c7a&text=grill+mongolian&per_page=1000&format=json&nojsoncallback=1&api_sig=340b7e6535c957ff6522c97a2f0868f2'
 $.getJSON(flickrAPI).done(getFlickrData).fail(function (e) {
   console.log('There was an error. Try again.', e)
 })
 
 function getFlickrData (data) {
   // console.log(data)
-  var randomIndex = Math.floor(Math.random() * 100)
-  console.log(randomIndex)
-  placeImage(data, randomIndex, '#mainImg')
-  placeImage(data, randomIndex, '#dailySpecialImg')
-  placeImage(data, randomIndex, '#smallRestaurantPhoto')
-  placeImage(data, randomIndex, '#rightPhoto1')
-  placeImage(data, randomIndex, '#rightPhoto2')
-  placeImage(data, randomIndex, '#rightPhoto3')
+  // var randomIndex = Math.floor(Math.random() * 500)
+  // console.log(randomIndex)
+  placeImage(data, 224, '#mainImg')
+  placeImage(data, 384, '#dailySpecialImg')
+  placeImage(data, 90, '#rightPhoto1')
+  placeImage(data, 7, '#rightPhoto2')
+  placeImage(data, 160, '#rightPhoto3')
 }
 
 function placeImage (data, num, imgEl) {
