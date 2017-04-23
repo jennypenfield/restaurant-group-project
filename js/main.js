@@ -2,7 +2,8 @@ var $ = window.$
 
 // reservation form
 function clickTable (evt) {
-  $('.selected').removeClass('.selected')
+  var currentlySelectedTable = $('.selected')
+  currentlySelectedTable.removeClass('selected')
   var $clickedEl = $(evt.currentTarget)
   $clickedEl.addClass('selected')
 }
@@ -34,16 +35,18 @@ function placeImage (data, num, imgEl) {
   var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
   $(imgEl).attr('src', imgUrl)
 }
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 START of Latest News Box (Andrew)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 function fetchNewsSuccess (data) {
   $('#newsHead').html(data.title)
   $('#newsDate').html(data.date_published)
   $('#newsContent').html(data.post)
 }
+
 function fetchNewsError (err) {
-  $('#newsContent').html('No news available')
+  $('#newsContent').html('No news available', err)
 }
 
 var newsUrl = 'https://json-data.herokuapp.com/restaurant/news/1'
@@ -55,7 +58,9 @@ function fetchNews () {
     type: 'GET'
   })
 }
+
 fetchNews()
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 END of Latest News Box (Andrew)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

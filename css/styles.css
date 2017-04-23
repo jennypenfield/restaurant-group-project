@@ -8,7 +8,6 @@ body {
 #flexContainer {
   display: flex;
   flex-direction: column;
-  height: 1800px;
   width: 100vw;
 }
 
@@ -24,12 +23,16 @@ header {
   height: 100px;
 }
 
-.social-media {
+#socialMedia {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 4em;
   position: absolute;
-  top: 30%;
-  right: 10px; }
+  right: 30px;
+}
+
+a .fa {
+  color: white;
+}
 
 #mainImgContainer {
   display: table-cell;
@@ -49,21 +52,25 @@ header {
 #newsContainer {
   border-right: 1px gray solid;
   flex: 1;
+  padding: 10px;
 }
 /*~~~~~~~Start - News CSS added by Andrew~~~~~~~*/
   #newsHead {
-    width: 1
-    font: italic bold;
-    flex-wrap: wrap;
-    border: 2px;
+    font-family: 'Helvetica';
+    font-size: 2em;
+    text-align: center;
   }
+
   #newsDate {
-    text-align: right;
-    width: 1
+    font-family: 'Helvetica';
+    font-size: 2em;
+    text-align: center;
   }
-  }
+
   #newsContent {
     border: 2px;
+    text-align: justify;
+  }
 /*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
 
 
@@ -116,22 +123,22 @@ header {
 
 #rightPhoto1 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
 #rightPhoto2 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
 #rightPhoto3 {
   flex: 1;
-  height: 300px;
-  width: 300px;
+  height: 50px;
+  width: 50px;
 }
 
-footer {
+#footer {
   flex: 1;
 }
