@@ -1,6 +1,6 @@
 # Restaurant Group Project for The Iron Yard
 ## Team Indigo
-### Team Members: [Andrew Taylor]('https://github.com/agrahamt'), [David Robicheaux]('https://github.com/atomiczzz'), Jenny Penfield
+### Team Members: [Andrew Taylor](https://github.com/agrahamt), [David Robicheaux](https://github.com/atomiczzz), Jenny Penfield
 
 <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 
