@@ -24,14 +24,32 @@ header {
 }
 
 #socialMedia {
-  display: inline-block;
+  display: inline;
   font-size: 4em;
   position: absolute;
   right: 30px;
+  vertical-align: top;
 }
 
 a .fa {
   color: white;
+}
+
+#opentable {
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  display: inline;
+  font-family: 'Helvetica';
+  font-style: bold;
+  height: 50px;
+  position: relative;
+  vertical-align: top;
+}
+
+#opentablelink {
+  color: #353238;
+  text-decoration: none;
 }
 
 #mainImgContainer {
