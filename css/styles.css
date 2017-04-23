@@ -30,33 +30,50 @@ header {
   top: 30%;
   right: 10px; }
 
-#mainImg {
+#mainImgContainer {
+  display: table-cell;
+  background-color: #353238;
   border-bottom: 1px gray solid;
   flex: 2;
+  text-align: center;
+  vertical-align: middle;
 }
 
-#newsSpecialLocation {
+#newsSpecialLocationContainer {
   border-bottom: 1px gray solid;
   display: flex;
   flex: 2;
 }
 
-#news {
+#newsContainer {
   border-right: 1px gray solid;
   flex: 1;
 }
 
-#dailySpecial {
+#dailySpecialContainer {
+  border-right: 1px gray solid;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+#dailySpecialImg {
+  height: 300px;
+  width: 300px;
+}
+
+.verticalFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#locationContainer {
   border-right: 1px gray solid;
   flex: 1;
 }
 
-#location {
-  border-right: 1px gray solid;
-  flex: 1;
-}
-
-#tabsAndPhotos {
+#tabsAndPhotosContainer {
   border-bottom: 1px gray solid;
   display: flex;
   flex-direction: row;
@@ -68,24 +85,34 @@ header {
   flex: 3;
 }
 
-#photosRight {
+#photosRightContainer {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-#rightPhoto1 {
-  border-bottom: 1px gray solid;
+.photoBoxes {
+  display: flex;
   flex: 1;
+  justify-content: center;
+}
+
+#rightPhoto1 {
+  flex: 1;
+  height: 300px;
+  width: 300px;
 }
 
 #rightPhoto2 {
-  border-bottom: 1px gray solid;
   flex: 1;
+  height: 300px;
+  width: 300px;
 }
 
 #rightPhoto3 {
   flex: 1;
+  height: 300px;
+  width: 300px;
 }
 
 footer {
