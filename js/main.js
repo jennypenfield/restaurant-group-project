@@ -2,7 +2,8 @@ var $ = window.$
 
 // reservation form
 function clickTable (evt) {
-  $('.selected').removeClass('.selected')
+  var currentlySelectedTable = $('.selected')
+  currentlySelectedTable.removeClass('selected')
   var $clickedEl = $(evt.currentTarget)
   $clickedEl.addClass('selected')
 }
