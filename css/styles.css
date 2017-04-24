@@ -171,6 +171,9 @@ a .fa {
   width: 50%;
   margin-left: 20%;
 }
+#aboutSubedeiBody {
+  overflow: scroll;
+}
 
 #reservationsBody {
   padding: 4%;
