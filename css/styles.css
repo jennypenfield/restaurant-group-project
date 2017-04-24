@@ -170,6 +170,10 @@ a .fa {
   height: 70%;
   width: 50%;
   margin-left: 20%;
+    overflow: scroll;
+}
+#aboutSubedeiBody {
+  overflow: scroll;
 }
 
 #reservationsBody {
