@@ -28,14 +28,32 @@ header {
 }
 
 #socialMedia {
-  display: inline-block;
+  display: inline;
   font-size: 4em;
   position: absolute;
   right: 30px;
+  vertical-align: top;
 }
 
 a .fa {
   color: white;
+}
+
+#opentable {
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  display: inline;
+  font-family: 'Helvetica';
+  font-style: bold;
+  height: 50px;
+  position: relative;
+  vertical-align: top;
+}
+
+#opentablelink {
+  color: #353238;
+  text-decoration: none;
 }
 
 #mainImgContainer {
@@ -168,6 +186,15 @@ a .fa {
 #menuBody {
   padding-left: 2%;
   padding-right: 5%;
+
+#tabForm {
+  background-color: #f5f5f0;
+  border: 1px gray solid;
+  box-shadow: 0 0 1em 0.5em #353238;
+  height: 70%;
+  width: 50%;
+  margin-left: 20%;
+    overflow: scroll;
 }
 
 #reservationsBody {
