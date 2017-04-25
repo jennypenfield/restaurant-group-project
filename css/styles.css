@@ -1,6 +1,8 @@
 body {
   background-color: #c1b4ae;
+  font-family: 'Arial';
   margin: 0;
+  max-width: 100%;
 }
 
 /*create flex layout with 10 segments*/
@@ -8,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 200vh;
+  max-width: 100%;
   width: 100vw;
 }
 
@@ -15,6 +18,7 @@ header {
   background-image: linear-gradient(#92140c, #bd1b0f);
   box-shadow: 0 0 1em 0.5em #353238;
   color: #fff;
+  flex: 1;
   padding: 2em;
   text-align: center;
 }
@@ -53,13 +57,15 @@ a .fa {
 }
 
 #mainImgContainer {
-  display: table-cell;
   background-color: #353238;
   border-bottom: 1px gray solid;
   flex: 2;
-  flex-direction: column;
+  padding: 1%;
   text-align: center;
-  vertical-align: middle;
+}
+
+#mainImg {
+  height: 98%;
 }
 
 #newsSpecialLocationContainer {
@@ -74,9 +80,10 @@ a .fa {
 }
 /*~~~~~~~Start - News CSS added by Andrew~~~~~~~*/
   #newsHead {
+    color: #92140c;
     font-family: 'Helvetica';
     font-size: 2em;
-    margin-bottom: -10px;
+    margin-bottom: 2%;
     text-align: center;
   }
 
@@ -94,39 +101,32 @@ a .fa {
 
 #dailySpecialContainer {
   border-right: 1px gray solid;
-  /*display: flex;*/
+  text-align: center;
   flex: 1;
-  justify-content: center;
 }
 
 #dailySpecialImg {
-  height: 70%;
-  margin: 0 auto;
-  width: 70%;
-}
-
-.verticalFlex {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
+  width: 50%;
 }
 
 #googleContainer {
-  border-right: 1px gray solid;
   flex: 1;
 }
 
 #tabsAndPhotosContainer {
-  border-bottom: 1px gray solid;
+  background-image: linear-gradient(#92140c, #bd1b0f);
   display: flex;
   flex-direction: row;
   flex: 9;
 }
 
+/*Container holding the tabsForm*/
 #tabsBox {
-  background-image: linear-gradient(#92140c, #bd1b0f);
-  border-right: 1px gray solid;
-  flex: 2.5;
+  flex: 4;
 }
 
 #tabsRow {
@@ -138,30 +138,54 @@ a .fa {
   color: #92140c;
   display: flex;
   height: 8%;
-  width: 50%;
-  margin-left: 20%;
+  width: 80%;
+  margin-left: 10%;
   margin-top: 40px;
+}
+
+#tabsRow:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+#tabForm {
+  background-color: #f5f5f0;
+  border: 1px gray solid;
+  box-shadow: 0 0 1em 0.5em #353238;
+  height: 82%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 #aboutSubedeiTab {
   border-right: 1px gray solid;
-  display: inline-block;
+  display: inline;
   flex: 1;
+  font-size: 1.1em;
+  font-weight: bold;
   text-align: center;
 }
 
 #menuTab {
   border-right: 1px gray solid;
-  display: inline-block;
+  display: inline;
   flex: 1;
+  font-size: 1.1em;
+  font-weight: bold;
   text-align: center;
 }
 
 #reservationsTab {
-  display: inline-block;
+  display: inline;
   flex: 1;
+  font-size: 1.1em;
+  font-weight: bold;
   text-align: center;
 }
+
+#menuBody {
+  padding-left: 2%;
+  padding-right: 5%;
 
 #tabForm {
   background-color: #f5f5f0;
@@ -172,9 +196,6 @@ a .fa {
   margin-left: 20%;
     overflow: scroll;
 }
-#aboutSubedeiBody {
-  overflow: scroll;
-}
 
 #reservationsBody {
   padding: 4%;
@@ -184,33 +205,33 @@ a .fa {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
 }
 
 .photoBoxes {
   display: flex;
   flex: 1;
-  justify-content: center;
+  padding: 2%;
 }
 
 #rightPhoto1 {
   flex: 1;
-  height: 80%;
-  width: 80%;
+  height: 96%;
+  width: 96%;
 }
 
 #rightPhoto2 {
   flex: 1;
-  height: 50%;
+  height: 96%;
   width: 50%;
 }
 
 #rightPhoto3 {
   flex: 1;
-  height: 50%;
-  width: 50%;
+  height: 96%;
+  width: 96%;
 }
 
 footer {
+  background-color: #353238;
   flex: 1;
 }
