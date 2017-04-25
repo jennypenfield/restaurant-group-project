@@ -1,6 +1,9 @@
 var $ = window.$
 
-// reservation form
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* SELECT A TABLE IN THE RESERVATION FORM */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 function clickTable (evt) {
   var currentlySelectedTable = $('.selected')
   currentlySelectedTable.removeClass('selected')
@@ -10,28 +13,31 @@ function clickTable (evt) {
 
 $('#tableContainer').on('click', '.table', clickTable)
 
-/* Flickr API for all photos */
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=188843a1a5f0b6cd12b9346dc0f9cc81&text=grill+mongolian&per_page=1000&format=json&nojsoncallback=1'
-$.getJSON(flickrAPI).done(getFlickrData).fail(function (e) {
-  console.log('There was an error. Try again.', e)
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GET PHOTOS FROM FLICKR API */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9d125f270ce02fcb7b1ebf033e981ea9&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&auth_token=72157682923257276-5085a3d33e1b93ae&api_sig=0c7f48091dc045558cc58c17a9cb5b93'
+$.getJSON(flickrAPI).done(passFlickrData).fail(function (_err) {
+  console.log('There was an error getting the flickr API. Try again.')
 })
 
-function getFlickrData (data) {
+function passFlickrData (data) {
   // console.log(data)
   // var randomIndex = Math.floor(Math.random() * 500)
   // console.log(randomIndex)
-  placeImage(data, 224, '#mainImg')
-  placeImage(data, 384, '#dailySpecialImg')
-  placeImage(data, 90, '#rightPhoto1')
-  placeImage(data, 7, '#rightPhoto2')
-  placeImage(data, 160, '#rightPhoto3')
+  assignImage(data, 224, '#mainImg')
+  assignImage(data, 375, '#dailySpecialImg')
+  assignImage(data, 90, '#rightPhoto1')
+  assignImage(data, 98, '#rightPhoto2')
+  assignImage(data, 160, '#rightPhoto3')
 }
 
-function placeImage (data, num, imgEl) {
-  var id = data.photos.photo[num].id
-  var secret = data.photos.photo[num].secret
-  var server = data.photos.photo[num].server
-  var farm = data.photos.photo[num].farm
+function assignImage (data, photoNum, imgEl) {
+  var id = data.photos.photo[photoNum].id
+  var secret = data.photos.photo[photoNum].secret
+  var server = data.photos.photo[photoNum].server
+  var farm = data.photos.photo[photoNum].farm
 
   var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
   $(imgEl).attr('src', imgUrl)
@@ -62,27 +68,92 @@ function fetchNews () {
 
 fetchNews()
 
-/* Tabs area to show 'About Subedei', 'Mongol Menu', or 'Reservations' */
-var $menuBody = $('#menuBody')
-$menuBody.hide()
-var $reservationsBody = $('#reservationsBody')
-$reservationsBody.hide()
-var $aboutSubedeiBody = $('#aboutSubedeiBody')
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GENERATE MENU & DAILY SPECIAL FROM APIs */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+var menuAPI = 'https://json-data.herokuapp.com/restaurant/menu/1'
+$.getJSON(menuAPI).done(getMenuData).fail(function (_err) {
+  console.log('Cannot access menu API.')
+})
+
+function getMenuData (data) {
+  for (var item in data) {
+    if (data.hasOwnProperty(item)) {
+      buildMenu(item, data[item])
+      console.log(item, data[item])
+    }
+  }
+}
+
+function buildMenu (foodCourse, obj) {
+  var foodCourseHeading = '<h2>' + foodCourse.charAt(0).toUpperCase() + foodCourse.slice(1) + '<h2>'
+  $('#menuBody').append(foodCourseHeading)
+  obj.forEach(function (index) {
+    $('#menuBody').append(createMenuEntries(index))
+  })
+  getDailySpecial()
+}
+
+function createMenuEntries (eachFoodItem) {
+  var menuItem = '<div id="' + eachFoodItem.id + '">' + '<p><strong>' + eachFoodItem.item + ' .......... $' + eachFoodItem.price + '</strong></p>' +
+  '<p>' + eachFoodItem.description + '</p></div>'
+  return menuItem
+}
+
+function getDailySpecial () {
+  var dailySpecialAPI = 'https://json-data.herokuapp.com/restaurant/special/1'
+  $.getJSON(dailySpecialAPI).done(showDailySpecial).fail(function (_err) {
+    console.log('Cannot access daily special')
+  })
+}
+
+function showDailySpecial (data) {
+  var id = '#' + data.menu_item_id
+  var dailySpecial = $(id)
+  $('#dailySpecial').html(dailySpecial)
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* TABS FORM FOR ABOUT, MENU & RESERVATIONS */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Starting state showing #menuBody section only with 'About Subedei' tab color #353238 */
+var $menuBody = $('#menuBody')
+var $reservationsBody = $('#reservationsBody')
+var $aboutSubedeiBody = $('#aboutSubedeiBody')
+$menuBody.hide()
+$reservationsBody.hide()
+
+var $aboutSubedeiTab = $('#aboutSubedeiTab')
+var $menuTab = $('#menuTab')
+var $reservationsTab = $('#reservationsTab')
+$aboutSubedeiTab.css('color', '#353238')
+
+/* Event listeners on tabs to show the section corresponding to the tab that was clicked */
 $('#aboutSubedeiTab').on('click', function () {
   $aboutSubedeiBody.show()
+  $aboutSubedeiTab.css('color', '#353238')
   $menuBody.hide()
+  $menuTab.css('color', '#92140c')
   $reservationsBody.hide()
+  $reservationsTab.css('color', '#92140c')
 })
 
 $('#menuTab').on('click', function () {
-  $aboutSubedeiBody.hide()
   $menuBody.show()
+  $menuTab.css('color', '#353238')
+  $aboutSubedeiBody.hide()
+  $aboutSubedeiTab.css('color', '#92140c')
   $reservationsBody.hide()
+  $reservationsTab.css('color', '#92140c')
 })
 
 $('#reservationsTab').on('click', function () {
-  $aboutSubedeiBody.hide()
-  $menuBody.hide()
   $reservationsBody.show()
+  $reservationsTab.css('color', '#353238')
+  $aboutSubedeiBody.hide()
+  $aboutSubedeiTab.css('color', '#92140c')
+  $menuBody.hide()
+  $menuTab.css('color', '#92140c')
 })
