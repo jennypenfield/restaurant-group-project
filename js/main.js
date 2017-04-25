@@ -17,7 +17,7 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=9d125f270ce02fcb7b1ebf033e981ea9&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&auth_token=72157682923257276-5085a3d33e1b93ae&api_sig=0c7f48091dc045558cc58c17a9cb5b93'
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=70c8af8f150221737b7487a43a27aebd&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&api_sig=b287c90cf38a76dad1776b6079935bf3'
 $.getJSON(flickrAPI).done(passFlickrData).fail(function (_err) {
   console.log('There was an error getting the flickr API. Try again.')
 })
@@ -34,6 +34,7 @@ function passFlickrData (data) {
 }
 
 function assignImage (data, photoNum, imgEl) {
+  console.log(data)
   var id = data.photos.photo[photoNum].id
   var secret = data.photos.photo[photoNum].secret
   var server = data.photos.photo[photoNum].server
