@@ -29,10 +29,10 @@ header {
 
 #socialMedia {
   display: inline;
-  font-size: 4em;
+  font-size: 3em;
   position: absolute;
   right: 30px;
-  vertical-align: top;
+  vertical-align: center;
 }
 
 a .fa {
@@ -46,7 +46,7 @@ a .fa {
   display: inline;
   font-family: 'Helvetica';
   font-style: bold;
-  height: 50px;
+  height: 30px;
   position: relative;
   vertical-align: top;
 }
@@ -120,13 +120,15 @@ a .fa {
 #tabsAndPhotosContainer {
   background-image: linear-gradient(#92140c, #bd1b0f);
   display: flex;
-  flex-direction: row;
   flex: 9;
 }
 
 /*Container holding the tabsForm*/
-#tabsBox {
+#tabsContainer {
+  display: flex;
   flex: 4;
+  flex-direction: column;
+  padding: 2%;
 }
 
 #tabsRow {
@@ -137,10 +139,11 @@ a .fa {
   box-shadow: 0 0 1em 0.5em #353238;
   color: #92140c;
   display: flex;
+  flex: 1;
   height: 8%;
   width: 80%;
   margin-left: 10%;
-  margin-top: 40px;
+  /*margin-top: 15%;*/
 }
 
 #tabsRow:hover {
@@ -152,9 +155,11 @@ a .fa {
   background-color: #f5f5f0;
   border: 1px gray solid;
   box-shadow: 0 0 1em 0.5em #353238;
-  height: 82%;
+  flex: 9;
+  height: 70%;
   width: 80%;
   margin-left: 10%;
+  overflow: scroll;
 }
 
 #aboutSubedeiTab {
@@ -183,18 +188,14 @@ a .fa {
   text-align: center;
 }
 
+#aboutSubedeiBody{
+  margin: 3%;
+  text-align: justify;
+}
+
 #menuBody {
   padding-left: 2%;
   padding-right: 5%;
-
-#tabForm {
-  background-color: #f5f5f0;
-  border: 1px gray solid;
-  box-shadow: 0 0 1em 0.5em #353238;
-  height: 70%;
-  width: 50%;
-  margin-left: 20%;
-    overflow: scroll;
 }
 
 #reservationsBody {
@@ -222,7 +223,7 @@ a .fa {
 #rightPhoto2 {
   flex: 1;
   height: 96%;
-  width: 50%;
+  width: 96%;
 }
 
 #rightPhoto3 {
@@ -231,7 +232,7 @@ a .fa {
   width: 96%;
 }
 
-footer {
+#footer {
   background-color: #353238;
   flex: 1;
 }
