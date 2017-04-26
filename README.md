@@ -4,6 +4,8 @@
 
 <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
 
+[View on gh-pages](https://jennypenfield.github.io/restaurant-group-project/)
+
 ## Objective
 
 Create a responsive, one-page website that gives visitors as much info about the restaurant as possible.
