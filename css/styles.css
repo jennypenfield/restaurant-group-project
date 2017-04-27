@@ -55,6 +55,7 @@ a .fa {
 }
 
 #mainImg {
+  box-shadow: 0 0 1em 0.5em #353238;
   height: 98%;
 }
 
@@ -66,8 +67,14 @@ a .fa {
 
 #newsContainer {
   border-right: 1px gray solid;
+  box-sizing: border-box;
   flex: 1;
+  overflow: scroll;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
+
 /*~~~~~~~Start - News CSS added by Andrew~~~~~~~*/
   #newsHead {
     color: #92140c;
@@ -84,7 +91,8 @@ a .fa {
 
   #newsContent {
     border: 2px;
-    padding: 15px;
+    overflow: scroll;
+    padding: 2%;
     text-align: justify;
   }
 /*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
@@ -96,7 +104,9 @@ a .fa {
 }
 
 #dailySpecialImg {
-  height: 50%;
+  box-shadow: 0 0 1em 0.5em #353238;
+  height: 40%;
+  margin-bottom: 2%;
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 2%;
@@ -113,7 +123,7 @@ a .fa {
   flex: 9;
 }
 
-/*Container holding the tabsForm*/
+/* Container holding the tabsForm */
 #tabsContainer {
   display: flex;
   flex: 4;
@@ -126,6 +136,8 @@ a .fa {
   border-left: 1px gray solid;
   border-top: 1px gray solid;
   border-right: 1px gray solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;;
   box-shadow: 0 0 1em 0.5em #353238;
   color: #92140c;
   display: flex;
@@ -133,7 +145,6 @@ a .fa {
   height: 8%;
   width: 80%;
   margin-left: 10%;
-  /*margin-top: 15%;*/
 }
 
 #tabsRow:hover {
@@ -144,12 +155,14 @@ a .fa {
 #tabForm {
   background-color: #f5f5f0;
   border: 1px gray solid;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   box-shadow: 0 0 1em 0.5em #353238;
   flex: 9;
   height: 70%;
+  overflow: scroll;
   width: 80%;
   margin-left: 10%;
-  overflow: scroll;
 }
 
 #aboutSubedeiTab {
@@ -171,6 +184,15 @@ a .fa {
 }
 
 #reservationsTab {
+  border-right: 1px gray solid;
+  display: inline;
+  flex: 1;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#commentsReviewsTab {
   display: inline;
   flex: 1;
   font-size: 1.1em;
@@ -205,18 +227,21 @@ a .fa {
 }
 
 #rightPhoto1 {
+  box-shadow: 0 0 1em 0.25em #5e0d08;
   flex: 1;
   height: 96%;
   width: 96%;
 }
 
 #rightPhoto2 {
+  box-shadow: 0 0 1em 0.5em #5e0d08;
   flex: 1;
   height: 96%;
   width: 96%;
 }
 
 #rightPhoto3 {
+  box-shadow: 0 0 1em 0.5em #5e0d08;
   flex: 1;
   height: 96%;
   width: 96%;
