@@ -158,3 +158,53 @@ $('#reservationsTab').on('click', function () {
   $menuBody.hide()
   $menuTab.css('color', '#92140c')
 })
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Google map api
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+var $ = window.$
+;(function () {
+  var HOUSTON = {lat: 29.7604, lng: -95.2147}
+  var DEFAULT_ZOOM_LEVEL = 8
+  var DEFAULT_STARTING_PLACE = HOUSTON
+
+  var mapEl = byId('map')
+  var gmap = null
+  var marker = null
+
+  function initMap () {
+    gmap = new google.maps.Map(mapEl, {
+      zoom: DEFAULT_ZOOM_LEVEL,
+      center: DEFAULT_STARTING_PLACE
+    })
+    marker = new google.maps.Marker({
+      position: DEFAULT_STARTING_PLACE,
+      map: gmap
+    })
+  }
+
+  window.SUBEDEI = window.SUBEDEI || {}
+  window.SUBEDEI.initGoogleMap = initMap
+
+  function clickMapLocationBtn (evt) {
+    var btnEl = evt.currentTarget
+    var lat = parseFloat(btnEl.dataset.lat)
+    var lng = parseFloat(btnEl.dataset.lng)
+    var newLocation = {lat: lat, lng: lng}
+    gmap.setCenter(newLocation)
+    marker.setPosition(newLocation)
+    marker.setAnimation(google.maps.Animation.DROP)
+  }
+
+  function addEvents () {
+    $('.map-location-btn').click(clickMapLocationBtn)
+  }
+
+  function byId (id) {
+    return document.getElementById(id)
+  }
+
+  addEvents()
+})()
+
+$('.map-location-btn').css('cursor', 'pointer')
