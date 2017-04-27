@@ -35,7 +35,11 @@
       <img id='dailySpecialImg' src='#' alt='daily special image'>
     </div>
     <div id='googleContainer'>
-      <p id='newsHead'>Get Directions</p>
+      <p class ='google' id='newsHead'>Our Locations</p>
+      <div id='map'></div>
+      <button class="map-location-btn" data-lat="29.7604" data-lng="-95.2147">Show Houston</button>
+      <button class="map-location-btn" data-lat="30.2672" data-lng="-97.7431">Show Austin</button>
+      <button class="map-location-btn" data-lat="40.7128" data-lng="-74.0059">Show NYC</button>
     </div>
   </div>
   <div id='tabsAndPhotosContainer'>
@@ -125,5 +129,6 @@
 </div>
 <script src='js/jquery-3.2.1.min.js'></script>
 <script src='js/main.js'></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALE5fp7rAyvd6b0PNQFWhqJknuNCAu4fM&callback=SUBEDEI.initGoogleMap"></script>
 </body>
 </html>
