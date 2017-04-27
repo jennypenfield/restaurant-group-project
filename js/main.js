@@ -17,7 +17,7 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=70c8af8f150221737b7487a43a27aebd&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&api_sig=b287c90cf38a76dad1776b6079935bf3'
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d2cc21cf99dd2a91f2153e363b5c6cca&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&api_sig=be36eb370d180d2f9163e089f6a8e003'
 $.getJSON(flickrAPI).done(passFlickrData).fail(function (_err) {
   console.log('There was an error getting the flickr API. Try again.')
 })
@@ -41,6 +41,7 @@ function assignImage (data, photoNum, imgEl) {
   var farm = data.photos.photo[photoNum].farm
 
   var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
+
   $(imgEl).attr('src', imgUrl)
 }
 
@@ -123,12 +124,15 @@ function showDailySpecial (data) {
 var $menuBody = $('#menuBody')
 var $reservationsBody = $('#reservationsBody')
 var $aboutSubedeiBody = $('#aboutSubedeiBody')
+var $commentsReviewsBody = $('#commentsReviewsBody')
 $menuBody.hide()
 $reservationsBody.hide()
+$commentsReviewsBody.hide()
 
 var $aboutSubedeiTab = $('#aboutSubedeiTab')
 var $menuTab = $('#menuTab')
 var $reservationsTab = $('#reservationsTab')
+var $commentsReviewsTab = $('#commentsReviewsTab')
 $aboutSubedeiTab.css('color', '#353238')
 
 /* Event listeners on tabs to show the section corresponding to the tab that was clicked */
@@ -139,6 +143,8 @@ $('#aboutSubedeiTab').on('click', function () {
   $menuTab.css('color', '#92140c')
   $reservationsBody.hide()
   $reservationsTab.css('color', '#92140c')
+  $commentsReviewsBody.hide()
+  $commentsReviewsTab.css('color', '#92140c')
 })
 
 $('#menuTab').on('click', function () {
@@ -148,6 +154,8 @@ $('#menuTab').on('click', function () {
   $aboutSubedeiTab.css('color', '#92140c')
   $reservationsBody.hide()
   $reservationsTab.css('color', '#92140c')
+  $commentsReviewsBody.hide()
+  $commentsReviewsTab.css('color', '#92140c')
 })
 
 $('#reservationsTab').on('click', function () {
@@ -157,4 +165,17 @@ $('#reservationsTab').on('click', function () {
   $aboutSubedeiTab.css('color', '#92140c')
   $menuBody.hide()
   $menuTab.css('color', '#92140c')
+  $commentsReviewsBody.hide()
+  $commentsReviewsTab.css('color', '#92140c')
+})
+
+$('#commentsReviewsTab').on('click', function () {
+  $commentsReviewsBody.show()
+  $commentsReviewsTab.css('color', '#353238')
+  $aboutSubedeiBody.hide()
+  $aboutSubedeiTab.css('color', '#92140c')
+  $menuBody.hide()
+  $menuTab.css('color', '#92140c')
+  $reservationsBody.hide()
+  $reservationsTab.css('color', '#92140c')
 })
