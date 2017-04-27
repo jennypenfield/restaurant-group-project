@@ -29,27 +29,17 @@ header {
 
 #socialMedia {
   display: inline;
-  font-size: 3em;
+  font-size: 45px;
   position: absolute;
   right: 30px;
-  vertical-align: center;
+  vertical-align: bottom;
 }
 
 a .fa {
   color: white;
 }
 
-#opentable {
-  background-color: #fff;
-  border-radius: 5px;
-  border: none;
-  display: inline;
-  font-family: 'Helvetica';
-  font-style: bold;
-  height: 30px;
-  position: relative;
-  vertical-align: top;
-}
+
 
 #opentablelink {
   color: #353238;
