@@ -26,11 +26,17 @@ function passFlickrData (data) {
   // console.log(data)
   // var randomIndex = Math.floor(Math.random() * 500)
   // console.log(randomIndex)
-  assignImage(data, 224, '#mainImg')
-  assignImage(data, 375, '#dailySpecialImg')
-  assignImage(data, 90, '#rightPhoto1')
-  assignImage(data, 98, '#rightPhoto2')
-  assignImage(data, 160, '#rightPhoto3')
+  var MAIN_IMG_INDEX = 224
+  var DAILY_SPECIAL_INDEX = 375
+  var RIGHT_PHOTO1_INDEX = 90
+  var RIGHT_PHOTO2_INDEX = 98
+  var RIGHT_PHOTO3_INDEX = 160
+
+  assignImage(data, MAIN_IMG_INDEX, '#mainImg')
+  assignImage(data, DAILY_SPECIAL_INDEX, '#dailySpecialImg')
+  assignImage(data, RIGHT_PHOTO1_INDEX, '#rightPhoto1')
+  assignImage(data, RIGHT_PHOTO2_INDEX, '#rightPhoto2')
+  assignImage(data, RIGHT_PHOTO3_INDEX, '#rightPhoto3')
 }
 
 function assignImage (data, photoNum, imgEl) {
@@ -183,7 +189,7 @@ $('#commentsReviewsTab').on('click', function () {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Google map api
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-var $ = window.$
+
 ;(function () {
   var HOUSTON = {lat: 29.7604, lng: -95.2147}
   var DEFAULT_ZOOM_LEVEL = 8
