@@ -17,9 +17,9 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d592362beec3f98703d88ff5d1d35647&tags=mongolian+grill&per_page=500&format=json&nojsoncallback=1'
-$.getJSON(flickrAPI).done(passFlickrData).fail(function (_err) {
-  console.log('There was an error getting the flickr API. Try again.')
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=2f70f1a0e94575ba10c9dda701454c42&text=mongolian+grill&format=json&nojsoncallback=1'
+$.getJSON(flickrAPI).done(passFlickrData).fail(function (e) {
+  console.log('There was an error getting the flickr API. Try again.', e)
 })
 
 function passFlickrData (data) {
@@ -28,11 +28,11 @@ function passFlickrData (data) {
   // console.log(randomIndex)
 
   /* Set the following photo index number from 'photo' array within flickr api object */
-  var MAIN_IMG_INDEX = 82
-  var DAILY_SPECIAL_INDEX = 1
-  var RIGHT_PHOTO1_INDEX = 5
-  var RIGHT_PHOTO2_INDEX = 12
-  var RIGHT_PHOTO3_INDEX = 111
+  var MAIN_IMG_INDEX = 17
+  var DAILY_SPECIAL_INDEX = 2
+  var RIGHT_PHOTO1_INDEX = 25
+  var RIGHT_PHOTO2_INDEX = 59
+  var RIGHT_PHOTO3_INDEX = 90
 
   assignImage(data, MAIN_IMG_INDEX, '#mainImg')
   assignImage(data, DAILY_SPECIAL_INDEX, '#dailySpecialImg')
@@ -83,8 +83,8 @@ fetchNews()
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 var menuAPI = 'https://json-data.herokuapp.com/restaurant/menu/1'
-$.getJSON(menuAPI).done(getMenuData).fail(function (_err) {
-  console.log('Cannot access menu API.')
+$.getJSON(menuAPI).done(getMenuData).fail(function (e) {
+  console.log('Cannot access menu API.', e)
 })
 
 function getMenuData (data) {
@@ -142,7 +142,7 @@ function toggleTabs (btn) {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* GOOGLE MAPS API */
+/* GOOGLE MAP */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 ;(function () {
