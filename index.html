@@ -11,6 +11,7 @@
 
 <body>
 <div id='flexContainer'>
+
   <header>
     <img id='logo' src='./img/logo.png' alt='Subedei logo'>
     <div id="socialMedia">
@@ -20,9 +21,11 @@
       <a href="https://www.opentable.com" target="_blank"><img height="41px" id ='opentable' src='img/otlogo.png'></a>
     </div>
   </header>
+
   <div id='mainImgContainer'>
     <img id='mainImg' src='#' alt='main image'>
   </div>
+
   <div id='newsSpecialLocationContainer'>
     <div id='newsContainer'>
       <p id='newsHead'>Title</p>
@@ -42,23 +45,26 @@
       <button class="map-location-btn" data-lat="40.7128" data-lng="-74.0059">Show NYC</button>
     </div>
   </div>
+
   <div id='tabsAndPhotosContainer'>
     <div id='tabsContainer'>
-      <div id='tabsRow'>
-        <p id='aboutSubedeiTab'>About Subedei</p><p id='menuTab'>Our Menu</p><p id='reservationsTab'>Reservations</p><p id = 'commentsReviewsTab'>Comments/Reviews</p>
+      <div class='tabs-row'>
+        <button data-btn='aboutSubedeiBody' class='tab-links active'>About Subedei</button><button data-btn='menuBody'class='tab-links'>Our Menu
+        </button><button data-btn='reservationsBody' class='tab-links'>Reservations</button><button data-btn='commentsReviewsBody'
+        class='tab-links'>Comments/Reviews</button>
       </div>
-      <div id='tabForm'>
-        <div id='aboutSubedeiBody'><p>Since our opening in 2013, <em>Subedei</em> has stayed on the cutting edge of historically-accurate world adventure cuisine. Let us treat you to a feast worthy of the great khans!</p>
+      <div class='tab-form'>
+        <div id='aboutSubedeiBody' class='tab-content'><p>Since our opening in 2013, <em>Subedei</em> has stayed on the cutting edge of historically-accurate world adventure cuisine. Let us treat you to a feast worthy of the great khans!</p>
 
-        <p>Named after Chingis Khan’s greatest general, <em>Subedei</em> brings together the flavors of China, India, Central Asia, Russia, Syria, Iran/Persia, Iraq, the Levant, Saudi Arabia, Hungary, Austria and Poland eloquently incorporated by the culinary traditions of twelfth-century Mongolian steppe culture.</p>
-        <p>The Mongol empire was not simply about the conquest, destruction, and the devastation of agrarian peoples by marauding nomads - it was also about cross-cultural exchange.  The Mongols expanded the arterial silk road between East and West and expanded it dramatically - what had been a single thread of communication became woven into a rich, elaborate trans-asiatic tapestry.  Just as Alexander the Great’s conquests created the Hellenic world, Genghis Khan created the modern concept of Asia. <em>Subedei</em> restaurant articulates the culinary component of this cultural exchange for modern palates.</p>
+          <p>Named after Chingis Khan’s greatest general, <em>Subedei</em> brings together the flavors of China, India, Central Asia, Russia, Syria, Iran/Persia, Iraq, the Levant, Saudi Arabia, Hungary, Austria and Poland eloquently incorporated by the culinary traditions of twelfth-century Mongolian steppe culture.</p>
+          <p>The Mongol empire was not simply about the conquest, destruction, and the devastation of agrarian peoples by marauding nomads - it was also about cross-cultural exchange.  The Mongols expanded the arterial silk road between East and West and expanded it dramatically - what had been a single thread of communication became woven into a rich, elaborate trans-asiatic tapestry.  Just as Alexander the Great’s conquests created the Hellenic world, Genghis Khan created the modern concept of Asia. <em>Subedei</em> restaurant articulates the culinary component of this cultural exchange for modern palates.</p>
 
-        <h3>Our chef and founder</h3>
-        <p><strong>Dr. Jacques Temuchin</strong> (PhD. History, University of Texas, <a href="">CV</a>) is a leading practicioner of <a href="https://cityhistorymuseums.wordpress.com/tag/gastronomy/" target="_blank">Historical gastronomy</a>.  A dashing explorer fluent in Uyghur, Jurchen, Medieval Russian, and Arabic, Temuchin is an expert in reconstructing medieval recipes with scrupulous attention to detail. He also served as a sous chef at Medieval Times, Austin for two years.</p>
-        <p>“Dr. Jack” is also a captivating lecturer available for two-hour history slideshow/dinner/drinking parties upon request.
-        </p></div>
-        <div id='menuBody'></div>
-        <div id='reservationsBody'>
+          <h3>Our chef and founder</h3>
+          <p><strong>Dr. Jacques Temuchin</strong> (PhD. History, University of Texas, <a href="">CV</a>) is a leading practicioner of <a href="https://cityhistorymuseums.wordpress.com/tag/gastronomy/" target="_blank">Historical gastronomy</a>.  A dashing explorer fluent in Uyghur, Jurchen, Medieval Russian, and Arabic, Temuchin is an expert in reconstructing medieval recipes with scrupulous attention to detail. He also served as a sous chef at Medieval Times, Austin for two years.</p>
+          <p>“Dr. Jack” is also a captivating lecturer available for two-hour history slideshow/dinner/drinking parties upon request.</p>
+        </div>
+        <div id='menuBody' class='tab-content'></div>
+        <div id='reservationsBody' class='tab-content'>
           <h3>Reservations</h3>
           <div class='inputContainer'>
             <input type='text' id='reserv' value='Name'>
@@ -109,10 +115,11 @@
             <button type='submit' id='submit'>Submit</button>
           </div>
         </div>
-        <div id='commentsReviewsBody'>
+        <div id='commentsReviewsBody' class='tab-content'>
         </div>
       </div>
     </div>
+
     <div id='photosRightContainer'>
       <div class='photoBoxes'>
         <img id='rightPhoto1' src='#' alt='food photo'>
@@ -125,8 +132,23 @@
       </div>
     </div>
   </div>
-  <footer id='footer'>
-    links go here
+
+  <footer>
+    <div class='left-footer-box'>
+      <p>Houston</p>
+      <p>111 Main Street</p>
+      <p>713.555.5555</p>
+    </div>
+    <div class='middle-footer-box'>
+      <p>Austin</p>
+      <p>501 W. 6th Street</p>
+      <p>512.555.5555</p>
+    </div>
+    <div class='right-footer-box'>
+      <p>New York</p>
+      <p>111 Broadway</p>
+      <p>212.555.5555</p>
+    </div>
   </footer>
 </div>
 <script src='js/jquery-3.2.1.min.js'></script>

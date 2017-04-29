@@ -17,20 +17,22 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d2cc21cf99dd2a91f2153e363b5c6cca&text=mongolian+grill&per_page=500&format=json&nojsoncallback=1&api_sig=be36eb370d180d2f9163e089f6a8e003'
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d592362beec3f98703d88ff5d1d35647&tags=mongolian+grill&per_page=500&format=json&nojsoncallback=1'
 $.getJSON(flickrAPI).done(passFlickrData).fail(function (_err) {
   console.log('There was an error getting the flickr API. Try again.')
 })
 
 function passFlickrData (data) {
   // console.log(data)
-  // var randomIndex = Math.floor(Math.random() * 500)
+  // var randomIndex = Math.floor(Math.random() * 274)
   // console.log(randomIndex)
-  var MAIN_IMG_INDEX = 224
-  var DAILY_SPECIAL_INDEX = 375
-  var RIGHT_PHOTO1_INDEX = 90
-  var RIGHT_PHOTO2_INDEX = 98
-  var RIGHT_PHOTO3_INDEX = 160
+
+  /* Set the following photo index number from 'photo' array within flickr api object */
+  var MAIN_IMG_INDEX = 82
+  var DAILY_SPECIAL_INDEX = 1
+  var RIGHT_PHOTO1_INDEX = 5
+  var RIGHT_PHOTO2_INDEX = 12
+  var RIGHT_PHOTO3_INDEX = 111
 
   assignImage(data, MAIN_IMG_INDEX, '#mainImg')
   assignImage(data, DAILY_SPECIAL_INDEX, '#dailySpecialImg')
@@ -51,9 +53,9 @@ function assignImage (data, photoNum, imgEl) {
   $(imgEl).attr('src', imgUrl)
 }
 
-/*  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-START of Latest News Box (Andrew)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GET LATEST NEWS FROM API */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 function fetchNewsSuccess (data) {
   $('#newsHead').html(data.title)
   $('#newsDate').html(data.date_published)
@@ -126,69 +128,19 @@ function showDailySpecial (data) {
 /* TABS FORM FOR ABOUT, MENU & RESERVATIONS */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* Starting state showing #menuBody section only with 'About Subedei' tab color #353238 */
-var $menuBody = $('#menuBody')
-var $reservationsBody = $('#reservationsBody')
-var $aboutSubedeiBody = $('#aboutSubedeiBody')
-var $commentsReviewsBody = $('#commentsReviewsBody')
-$menuBody.hide()
-$reservationsBody.hide()
-$commentsReviewsBody.hide()
+$('.tab-links').click(toggleTabs)
 
-var $aboutSubedeiTab = $('#aboutSubedeiTab')
-var $menuTab = $('#menuTab')
-var $reservationsTab = $('#reservationsTab')
-var $commentsReviewsTab = $('#commentsReviewsTab')
-$aboutSubedeiTab.css('color', '#353238')
+function toggleTabs (btn) {
+  $('.tab-links').removeClass('active')
+  $('#aboutSubedeiBody, #menuBody, #reservationsBody, commentsReviewsBody').hide()
+  $(this).addClass('active')
+  var idName = '#' + btn.target.dataset.btn
+  $(idName).show()
+}
 
-/* Event listeners on tabs to show the section corresponding to the tab that was clicked */
-$('#aboutSubedeiTab').on('click', function () {
-  $aboutSubedeiBody.show()
-  $aboutSubedeiTab.css('color', '#353238')
-  $menuBody.hide()
-  $menuTab.css('color', '#92140c')
-  $reservationsBody.hide()
-  $reservationsTab.css('color', '#92140c')
-  $commentsReviewsBody.hide()
-  $commentsReviewsTab.css('color', '#92140c')
-})
-
-$('#menuTab').on('click', function () {
-  $menuBody.show()
-  $menuTab.css('color', '#353238')
-  $aboutSubedeiBody.hide()
-  $aboutSubedeiTab.css('color', '#92140c')
-  $reservationsBody.hide()
-  $reservationsTab.css('color', '#92140c')
-  $commentsReviewsBody.hide()
-  $commentsReviewsTab.css('color', '#92140c')
-})
-
-$('#reservationsTab').on('click', function () {
-  $reservationsBody.show()
-  $reservationsTab.css('color', '#353238')
-  $aboutSubedeiBody.hide()
-  $aboutSubedeiTab.css('color', '#92140c')
-  $menuBody.hide()
-  $menuTab.css('color', '#92140c')
-  $commentsReviewsBody.hide()
-  $commentsReviewsTab.css('color', '#92140c')
-})
-
-$('#commentsReviewsTab').on('click', function () {
-  $commentsReviewsBody.show()
-  $commentsReviewsTab.css('color', '#353238')
-  $aboutSubedeiBody.hide()
-  $aboutSubedeiTab.css('color', '#92140c')
-  $menuBody.hide()
-  $menuTab.css('color', '#92140c')
-  $reservationsBody.hide()
-  $reservationsTab.css('color', '#92140c')
-})
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Google map api
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* GOOGLE MAPS API */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 ;(function () {
   var HOUSTON = {lat: 29.7604, lng: -95.2147}

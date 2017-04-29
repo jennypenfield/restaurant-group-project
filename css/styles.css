@@ -5,7 +5,6 @@ body {
   max-width: 100%;
 }
 
-/*create flex layout with 10 segments*/
 #flexContainer {
   display: flex;
   flex-direction: column;
@@ -39,8 +38,6 @@ a .fa {
   color: white;
 }
 
-
-
 #opentablelink {
   color: #353238;
   text-decoration: none;
@@ -56,20 +53,18 @@ a .fa {
 
 #mainImg {
   box-shadow: 0 0 1em 0.5em #353238;
-  height: 98%;
+  height: 320px;
 }
 
 #newsSpecialLocationContainer {
   border-bottom: 1px gray solid;
   display: flex;
-  flex: 5;
+  flex: 4;
 }
 
 #newsContainer {
   border-right: 1px gray solid;
-  box-sizing: border-box;
   flex: 1;
-  overflow: scroll;
   padding-bottom: 1%;
   padding-left: 2%;
   padding-right: 2%;
@@ -79,7 +74,7 @@ a .fa {
   #newsHead {
     color: #92140c;
     font-family: 'Helvetica';
-    font-size: 2em;
+    font-size: 1.5em;
     margin-bottom: 2%;
     text-align: center;
   }
@@ -91,14 +86,15 @@ a .fa {
 
   #newsContent {
     border: 2px;
-    overflow: scroll;
-    padding: 2%;
+    max-width: 95%;
+    padding: 15px;
     text-align: justify;
   }
 /*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
 
 #dailySpecialContainer {
   border-right: 1px gray solid;
+  padding: 15px;
   text-align: center;
   flex: 1;
 }
@@ -109,7 +105,7 @@ a .fa {
   margin-bottom: 2%;
   margin-left: 25%;
   margin-right: 25%;
-  margin-top: 2%;
+  margin-top: 5%;
   width: 50%;
 }
 
@@ -120,10 +116,9 @@ a .fa {
 #tabsAndPhotosContainer {
   background-image: linear-gradient(#92140c, #bd1b0f);
   display: flex;
-  flex: 9;
+  flex: 7;
 }
 
-/* Container holding the tabsForm */
 #tabsContainer {
   display: flex;
   flex: 4;
@@ -131,7 +126,7 @@ a .fa {
   padding: 2%;
 }
 
-#tabsRow {
+.tabs-row {
   background-color: #f5f5f0;
   border-left: 1px gray solid;
   border-top: 1px gray solid;
@@ -147,12 +142,7 @@ a .fa {
   margin-left: 10%;
 }
 
-#tabsRow:hover {
-  color: gray;
-  cursor: pointer;
-}
-
-#tabForm {
+.tab-form {
   background-color: #f5f5f0;
   border: 1px gray solid;
   border-bottom-left-radius: 5px;
@@ -165,8 +155,7 @@ a .fa {
   margin-left: 10%;
 }
 
-#aboutSubedeiTab {
-  border-right: 1px gray solid;
+.tab-links {
   display: inline;
   flex: 1;
   font-size: 1.1em;
@@ -174,30 +163,13 @@ a .fa {
   text-align: center;
 }
 
-#menuTab {
-  border-right: 1px gray solid;
-  display: inline;
-  flex: 1;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
+div.tabs-row button.active {
+  background-color: #92140c;
+  color: #fff;
 }
 
-#reservationsTab {
-  border-right: 1px gray solid;
-  display: inline;
-  flex: 1;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
-}
-
-#commentsReviewsTab {
-  display: inline;
-  flex: 1;
-  font-size: 1.1em;
-  font-weight: bold;
-  text-align: center;
+div.tabs-row button:hover {
+  background-color: gray;
 }
 
 #aboutSubedeiBody{
@@ -247,8 +219,23 @@ a .fa {
   width: 96%;
 }
 
-#footer {
+footer {
   background-color: #353238;
+  color: #fff;
+  display: flex;
+  flex: 1;
+  text-align: center;
+}
+
+.left-footer-box {
+  flex: 1;
+}
+
+.middle-footer-box {
+  flex: 1;
+}
+
+.right-footer-box {
   flex: 1;
 }
 
@@ -256,7 +243,8 @@ a .fa {
 
 #map{
   flex:1;
-  width:100%;
+  width:500px;
+  margin: 0 auto;
   height:250px;
   background-color:gray;
   box-shadow: 0 2px 5px #353238
