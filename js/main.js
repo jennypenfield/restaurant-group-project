@@ -128,11 +128,14 @@ function showDailySpecial (data) {
 /* TABS FORM FOR ABOUT, MENU & RESERVATIONS */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-$('.tab-links').click(toggleTabs)
+/* Default settings to show 'About' tab */
+$('#aboutSubedeiBody').show()
+$('#menuBody, #reservationsBody, #commentsReviewsBody').hide()
 
+$('.tab-links').click(toggleTabs)
 function toggleTabs (btn) {
   $('.tab-links').removeClass('active')
-  $('#aboutSubedeiBody, #menuBody, #reservationsBody, commentsReviewsBody').hide()
+  $('#aboutSubedeiBody, #menuBody, #reservationsBody, #commentsReviewsBody').hide()
   $(this).addClass('active')
   var idName = '#' + btn.target.dataset.btn
   $(idName).show()
