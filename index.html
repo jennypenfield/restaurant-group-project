@@ -10,11 +10,10 @@
 </head>
 
 <body>
-<div id='flexContainer'>
-
+<div class='flex-container'>
   <header>
     <img id='logo' src='./img/logo.png' alt='Subedei logo'>
-    <div id="socialMedia">
+    <div class="social-media">
       <a href='https://twitter.com' target='blank'><i class="fa fa-twitter" aria-hidden="true"></i></a>
       <a href='https://www.facebook.com' target='blank'><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
       <a href='https://www.instagram.com' target='blank'><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -22,22 +21,22 @@
     </div>
   </header>
 
-  <div id='mainImgContainer'>
+  <div class='main-img-container'>
     <img id='mainImg' src='#' alt='main image'>
   </div>
 
-  <div id='newsSpecialLocationContainer'>
-    <div id='newsContainer'>
+  <div class='news-specials-location-container'>
+    <div class='news-container'>
       <p id='newsHead'>Title</p>
       <p id='newsDate'>date</p>
       <p id='newsContent'>Content from API</p>
     </div>
-    <div id='dailySpecialContainer'>
+    <div class='daily-special-container'>
       <p id='newsHead'>Daily Special</p>
       <p id='dailySpecial'></p>
       <img id='dailySpecialImg' src='#' alt='daily special image'>
     </div>
-    <div id='googleContainer'>
+    <div class='google-map-container'>
       <p class ='google' id='newsHead'>Our Locations</p>
       <div id='map'></div>
       <button class="map-location-btn" data-lat="29.7604" data-lng="-95.2147">Show Houston</button>
@@ -46,8 +45,8 @@
     </div>
   </div>
 
-  <div id='tabsAndPhotosContainer'>
-    <div id='tabsContainer'>
+  <div class='tabs-photos-container'>
+    <div class='tabs-container'>
       <div class='tabs-row'>
         <button data-btn='aboutSubedeiBody' class='tab-links active'>About Subedei</button><button data-btn='menuBody'class='tab-links'>Our Menu
         </button><button data-btn='reservationsBody' class='tab-links'>Reservations</button><button data-btn='commentsReviewsBody'
@@ -117,7 +116,6 @@
         </div>
 
         <div id='commentsReviewsBody' class='tab-content'>
-
           <div id="disqus_thread"></div>
           <script>
           /**
@@ -142,7 +140,7 @@
       </div>
     </div>
 
-    <div id='photosRightContainer'>
+    <div class='photos-right-container'>
       <div class='photoBoxes'>
         <img id='rightPhoto1' src='#' alt='food photo'>
       </div>

@@ -5,7 +5,7 @@ body {
   max-width: 100%;
 }
 
-#flexContainer {
+.flex-container {
   display: flex;
   flex-direction: column;
   height: 200vh;
@@ -26,7 +26,7 @@ header {
   height: 100px;
 }
 
-#socialMedia {
+.social-media {
   display: inline;
   font-size: 45px;
   position: absolute;
@@ -43,7 +43,7 @@ a .fa {
   text-decoration: none;
 }
 
-#mainImgContainer {
+.main-img-container {
   background-color: #353238;
   border-bottom: 1px gray solid;
   flex: 2;
@@ -56,13 +56,13 @@ a .fa {
   height: 320px;
 }
 
-#newsSpecialLocationContainer {
+.news-specials-location-container {
   border-bottom: 1px gray solid;
   display: flex;
   flex: 4;
 }
 
-#newsContainer {
+.news-container {
   border-right: 1px gray solid;
   flex: 1;
   padding-bottom: 1%;
@@ -92,7 +92,7 @@ a .fa {
   }
 /*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
 
-#dailySpecialContainer {
+.daily-special-container {
   border-right: 1px gray solid;
   padding: 15px;
   text-align: center;
@@ -109,17 +109,19 @@ a .fa {
   width: 50%;
 }
 
-#googleContainer {
+.google-map-container {
   flex: 1;
+  padding: 10px;
+  text-align: center;
 }
 
-#tabsAndPhotosContainer {
+.tabs-photos-container {
   background-image: linear-gradient(#92140c, #bd1b0f);
   display: flex;
   flex: 7;
 }
 
-#tabsContainer {
+.tabs-container {
   display: flex;
   flex: 4;
   flex-direction: column;
@@ -186,7 +188,11 @@ div.tabs-row button:hover {
   padding: 4%;
 }
 
-#photosRightContainer {
+#commentsReviewsBody {
+  padding: 4%;
+}
+
+.photos-right-container {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -254,11 +260,7 @@ footer {
 
 .map-location-btn{
   display: inline-block;
+  margin-top: 20px;
   text-align: center;
   box-shadow: 0 1px 5px #353238
-}
-
-#googleContainer{
-  text-align: center;
-  padding: 5px;
 }
