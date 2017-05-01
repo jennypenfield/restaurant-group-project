@@ -183,6 +183,10 @@ div.tabs-row button:hover {
   text-align: justify;
 }
 
+.food-icons {
+  display: inline-block;
+}
+
 #menuBody {
   overflow: scroll;
   padding-left: 2%;
@@ -255,7 +259,7 @@ footer {
 #map{
   flex:1;
 
-  width:500px;
+  width:300px;
   margin: 0 auto;
   height:250px;
 

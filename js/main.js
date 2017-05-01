@@ -51,6 +51,7 @@ function assignImage (data, photoNum, imgEl) {
   var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
 
   $(imgEl).attr('src', imgUrl)
+  console.log(photoNum)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -106,9 +107,43 @@ function buildMenu (foodCourse, obj) {
 }
 
 function createMenuEntries (eachFoodItem) {
-  var menuItem = '<div id="' + eachFoodItem.id + '">' + '<p><strong>' + eachFoodItem.item + ' .......... $' + eachFoodItem.price + '</strong></p>' +
-  '<p>' + eachFoodItem.description + '</p></div>'
+  var menuItem = '<div id="' + eachFoodItem.id + '">' +
+  '<p display:"inline"><strong>' + eachFoodItem.item + ' .......... $' + eachFoodItem.price + '</strong></p>' +
+  '<p>' + eachFoodItem.description + '&nbsp;&nbsp;' +
+  getAllergyStatus(eachFoodItem) + getFavoriteStatus(eachFoodItem) + getSpicyStatus(eachFoodItem) + getVeganStatus(eachFoodItem) + '</p></div>'
   return menuItem
+}
+
+function getAllergyStatus (foodItem) {
+  if (foodItem.allergies === 1) {
+    return '<i class="food-icons fa fa-exclamation"></i> '
+  } else {
+    return ''
+  }
+}
+
+function getFavoriteStatus (foodItem) {
+  if (foodItem.favorite === 1) {
+    return '<i class="food-icons fa fa-star"></i> '
+  } else {
+    return ''
+  }
+}
+
+function getSpicyStatus (foodItem) {
+  if (foodItem.spicy === 1) {
+    return '<i class="food-icons fa fa-flash"></i> '
+  } else {
+    return ''
+  }
+}
+
+function getVeganStatus (foodItem) {
+  if (foodItem.vegan === 1) {
+    return '<i class="food-icons fa fa-heart"></i> '
+  } else {
+    return ''
+  }
 }
 
 function getDailySpecial () {
