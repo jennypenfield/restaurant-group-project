@@ -17,7 +17,7 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8d779e2ab6bce146731dc0bb3dc373eb&text=mongolian+grill&format=json&nojsoncallback=1'
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8d779e2ab6bce146731dc0bb3dc373eb&text=mongolian+grill&format=json&nojsoncallback=?'
 $.getJSON(flickrAPI).done(passFlickrData).fail(function failureSetImage (_err) {
   $('#mainImg').attr('src', 'https://farm4.staticflickr.com/3753/33361450580_88331dd197.jpg')
   $('#dailySpecialImg').attr('src', 'https://farm1.staticflickr.com/676/33899434605_e7e5454afb.jpg')
