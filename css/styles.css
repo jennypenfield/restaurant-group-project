@@ -8,7 +8,7 @@ body {
 .flex-container {
   display: flex;
   flex-direction: column;
-  height: 200vh;
+  height: 220vh;
   max-width: 100%;
   width: 100vw;
 }
@@ -38,9 +38,10 @@ a .fa {
   color: white;
 }
 
-#opentablelink {
+#opentable {
   color: #353238;
   text-decoration: none;
+  height: 41px;
 }
 
 .main-img-container {
@@ -53,13 +54,14 @@ a .fa {
 
 #mainImg {
   box-shadow: 0 0 1em 0.5em #353238;
-  height: 320px;
+  height: 100%;
 }
 
 .news-specials-location-container {
   border-bottom: 1px gray solid;
   display: flex;
   flex: 4;
+  flex-wrap: wrap;
 }
 
 .news-container {
@@ -71,7 +73,6 @@ a .fa {
   padding-right: 2%;
 }
 
-/*~~~~~~~Start - News CSS added by Andrew~~~~~~~*/
   #newsHead {
     color: #92140c;
     font-family: 'Helvetica';
@@ -87,11 +88,9 @@ a .fa {
 
   #newsContent {
     border: 2px;
-    max-width: 95%;
-    padding: 15px;
+    padding: 1%;
     text-align: justify;
   }
-/*~~~~~~~END - News CSS added by Andrew~~~~~~~*/
 
 .daily-special-container {
   border-right: 1px gray solid;
@@ -104,12 +103,12 @@ a .fa {
 
 #dailySpecialImg {
   box-shadow: 0 0 1em 0.5em #353238;
-  height: 40%;
+  height: 50%;
   margin-bottom: 2%;
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 5%;
-  width: 50%;
+  width: 60%;
 }
 
 .google-map-container {
@@ -144,7 +143,7 @@ a .fa {
   color: #92140c;
   display: flex;
   flex: 1;
-  height: 8%;
+  height: 6%;
   width: 80%;
   margin-left: 10%;
 }
@@ -165,7 +164,7 @@ a .fa {
 .tab-links {
   display: inline;
   flex: 1;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-weight: bold;
   text-align: center;
 }
@@ -189,7 +188,6 @@ div.tabs-row button:hover {
 }
 
 #menuBody {
-  overflow: scroll;
   padding-left: 2%;
   padding-right: 5%;
 }
@@ -259,11 +257,9 @@ footer {
 
 #map{
   flex:1;
-
-  width:300px;
+  width:75%;
   margin: 0 auto;
-  height:250px;
-
+  height:65%;
   background-color:gray;
   box-shadow: 0 2px 5px #353238
 }
@@ -273,4 +269,184 @@ footer {
   margin-top: 20px;
   text-align: center;
   box-shadow: 0 1px 5px #353238
+}
+
+
+@media only screen and (max-width: 1224px) {
+  #logo {
+    height: 70px;
+  }
+
+  #mainImg {
+    height: 300px;
+    width: 350px;
+  }
+
+  .tab-links {
+    font-size: 0.6em;
+  }
+
+  #newsHead {
+    font-size: 0.9em;
+  }
+
+  #newsContent {
+    font-size: 0.8em;
+  }
+
+  #dailySpecial {
+    font-size: 0.8em;
+  }
+
+  #aboutSubedeiBody {
+    font-size: 0.7em;
+  }
+
+  #menuBody {
+    font-size: 0.7em;
+  }
+
+  #reservationsBody {
+    font-size: 0.7em;
+  }
+
+  #rightPhoto1 {
+    height: 76%;
+  }
+
+  #rightPhoto2 {
+    height: 76%;
+  }
+
+  #rightPhoto3 {
+    height: 76%;
+  }
+
+  footer {
+    font-size: 0.7em;
+    line-height: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #logo {
+    height: 60px;
+  }
+
+  .tab-links {
+    font-size: 0.6em;
+  }
+
+  .social-media {
+    font-size: 20px;
+  }
+
+  #opentable {
+    height: 20px;
+  }
+
+  #mainImg {
+    height: 350px;
+    width: 400px;
+  }
+
+  #newsHead {
+    font-size: 0.8em;
+  }
+
+  #newsContent {
+    font-size: 0.7em;
+  }
+
+  #dailySpecial {
+    font-size: 0.7em;
+  }
+
+  #dailySpecialImg {
+    height: 35%;
+  }
+
+  #aboutSubedeiBody {
+    font-size: 0.7em;
+  }
+
+  #menuBody {
+    font-size: 0.7em;
+  }
+
+  #reservationsBody {
+    font-size: 0.7em;
+  }
+
+  #rightPhoto1 {
+    height: 55%;
+  }
+
+  #rightPhoto2 {
+    height: 55%;
+  }
+
+  #rightPhoto3 {
+    height: 55%;
+  }
+
+  #map {
+    height:45%;
+    }
+
+  .map-location-btn {
+    font-size: 0.5em;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #logo {
+    height: 50px;
+  }
+
+  .social-media {
+    font-size: 20px;
+  }
+
+  #mainImg {
+    height: 200px;
+    width: 200px;
+  }
+
+  #newsHead {
+    font-size: 0.9em;
+  }
+
+  #newsContent {
+    font-size: 0.7em;
+  }
+
+  #dailySpecial {
+    font-size: 0.7em;
+  }
+
+  #dailySpecialImg {
+    height: 30%;
+  }
+
+  .tab-links {
+    font-size: 6px;
+  }
+
+  #aboutSubedeiBody {
+    font-size: 0.5em;
+  }
+
+  #menuBody {
+    font-size: 0.5em;
+  }
+
+  #reservationsBody {
+    font-size: 0.5em;
+  }
+
+  footer {
+    font-size: 0.5em;
+  }
 }
