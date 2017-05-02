@@ -17,20 +17,20 @@ $('#tableContainer').on('click', '.table', clickTable)
 /* GET PHOTOS FROM FLICKR API */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=2f70f1a0e94575ba10c9dda701454c42&text=mongolian+grill&format=json&nojsoncallback=1'
-$.getJSON(flickrAPI).done(passFlickrData).fail(function (e) {
-  console.log('There was an error getting the flickr API. Try again.', e)
+var flickrAPI = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8d779e2ab6bce146731dc0bb3dc373eb&text=mongolian+grill&format=json&nojsoncallback=1'
+$.getJSON(flickrAPI).done(passFlickrData).fail(function failureSetImage (_err) {
+  $('#mainImg').attr('src', 'https://farm4.staticflickr.com/3753/33361450580_88331dd197.jpg')
+  $('#dailySpecialImg').attr('src', 'https://farm1.staticflickr.com/676/33899434605_e7e5454afb.jpg')
+  $('#rightPhoto1').attr('src', 'https://farm9.staticflickr.com/8618/16139744063_5ede744187.jpg')
+  $('#rightPhoto2').attr('src', 'https://farm1.staticflickr.com/587/20502538449_cd99858b80.jpg')
+  $('#rightPhoto3').attr('src', 'https://farm8.staticflickr.com/7594/16758524731_81c06b90c8.jpg')
 })
 
 function passFlickrData (data) {
-  // console.log(data)
-  // var randomIndex = Math.floor(Math.random() * 274)
-  // console.log(randomIndex)
-
   /* Set the following photo index number from 'photo' array within flickr api object */
-  var MAIN_IMG_INDEX = 17
-  var DAILY_SPECIAL_INDEX = 2
-  var RIGHT_PHOTO1_INDEX = 25
+  var MAIN_IMG_INDEX = 2
+  var DAILY_SPECIAL_INDEX = 1
+  var RIGHT_PHOTO1_INDEX = 91
   var RIGHT_PHOTO2_INDEX = 59
   var RIGHT_PHOTO3_INDEX = 90
 
@@ -42,16 +42,13 @@ function passFlickrData (data) {
 }
 
 function assignImage (data, photoNum, imgEl) {
-  console.log(data)
   var id = data.photos.photo[photoNum].id
   var secret = data.photos.photo[photoNum].secret
   var server = data.photos.photo[photoNum].server
   var farm = data.photos.photo[photoNum].farm
 
   var imgUrl = 'https://farm' + farm + '.staticflickr.com/' + server + '/' + id + '_' + secret + '.jpg'
-
   $(imgEl).attr('src', imgUrl)
-  console.log(photoNum)
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
