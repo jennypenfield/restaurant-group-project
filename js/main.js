@@ -107,40 +107,24 @@ function createMenuEntries (eachFoodItem) {
   var menuItem = '<div id="' + eachFoodItem.id + '">' +
   '<p display:"inline"><strong>' + eachFoodItem.item + ' .......... $' + eachFoodItem.price + '</strong></p>' +
   '<p>' + eachFoodItem.description + '&nbsp;&nbsp;' +
-  getAllergyStatus(eachFoodItem) + getFavoriteStatus(eachFoodItem) + getSpicyStatus(eachFoodItem) + getVeganStatus(eachFoodItem) + '</p></div>'
+  buildIcon(eachFoodItem) + '</p></div>'
   return menuItem
 }
-
-function getAllergyStatus (foodItem) {
+function buildIcon (foodItem) {
+  var icon = ''
   if (foodItem.allergies === 1) {
-    return '<i class="food-icons fa fa-exclamation"></i> '
-  } else {
-    return ''
+    icon += '<i title="allergies" class="food-icons fa fa-exclamation"></i> '
   }
-}
-
-function getFavoriteStatus (foodItem) {
   if (foodItem.favorite === 1) {
-    return '<i class="food-icons fa fa-star"></i> '
-  } else {
-    return ''
+    icon += '<i title="favorite" class="food-icons fa fa-star"></i> '
   }
-}
-
-function getSpicyStatus (foodItem) {
   if (foodItem.spicy === 1) {
-    return '<i class="food-icons fa fa-flash"></i> '
-  } else {
-    return ''
+    icon += '<i title="spicy" class="food-icons fa fa-flash"></i> '
   }
-}
-
-function getVeganStatus (foodItem) {
   if (foodItem.vegan === 1) {
-    return '<i class="food-icons fa fa-heart"></i> '
-  } else {
-    return ''
+    icon += '<i title="vegan" class="food-icons fa fa-heart"></i> '
   }
+  return icon
 }
 
 function getDailySpecial () {
