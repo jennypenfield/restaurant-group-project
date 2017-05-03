@@ -111,15 +111,20 @@ function createMenuEntries (eachFoodItem) {
   return menuItem
 }
 function buildIcon (foodItem) {
+  var icon = ''
   if (foodItem.allergies === 1) {
-    return '<i title="allergies" class="food-icons fa fa-exclamation"></i> '
-  } else if (foodItem.favorite === 1) {
-    return '<i title="favorite" class="food-icons fa fa-star"></i> '
-  } else if (foodItem.spicy === 1) {
-    return '<i title="spicy" class="food-icons fa fa-flash"></i> '
-  } else if (foodItem.vegan === 1) {
-    return '<i title="vegan" class="food-icons fa fa-heart"></i> '
+    icon += '<i title="allergies" class="food-icons fa fa-exclamation"></i> '
   }
+  if (foodItem.favorite === 1) {
+    icon += '<i title="favorite" class="food-icons fa fa-star"></i> '
+  }
+  if (foodItem.spicy === 1) {
+    icon += '<i title="spicy" class="food-icons fa fa-flash"></i> '
+  }
+  if (foodItem.vegan === 1) {
+    icon += '<i title="vegan" class="food-icons fa fa-heart"></i> '
+  }
+  return icon
 }
 
 function getDailySpecial () {
