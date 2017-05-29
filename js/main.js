@@ -1,9 +1,13 @@
 var $ = window.$
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* SELECT A TABLE IN THE RESERVATION FORM */
+/* RESERVATION FORM */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+// event handler for table selector
+$('#tableContainer').on('click', '.table', clickTable)
+
+// adds class 'selected' to last table clicked. removes and adds if another table is selected
 function clickTable (evt) {
   var currentlySelectedTable = $('.selected')
   currentlySelectedTable.removeClass('selected')
@@ -11,7 +15,29 @@ function clickTable (evt) {
   $clickedEl.addClass('selected')
 }
 
-$('#tableContainer').on('click', '.table', clickTable)
+// event handler for 'submit' button on reservation form
+$('#submitReservation').on('click', registerReservationInfo)
+
+// store entered information into variables and call the output reservation method
+function registerReservationInfo (evt) {
+  var $nameInput = $('#nameInputText').val()
+  var $emailInput = $('#emailInputText').val()
+  var $phoneInput = $('#phoneInputText').val()
+  var $partySize = $("input[name='party']:checked").val()
+  renderReservationInfo($nameInput, $emailInput, $phoneInput, $partySize)
+}
+
+function renderReservationInfo (name, email, phone, partySize) {
+  var $reservationEl = $('.reservations-right-container')
+  $reservationEl.html(
+    ` <p style="color:#92140c;font-size:20px">Thank you for your reservation at Subedei!</p>
+      <p>Name: ${name}</p>
+      <p>Email: ${email}</p>
+      <p>Phone Number: ${phone}</p>
+      <p>Number of guests: ${partySize}</p>
+      `
+  )
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* GET PHOTOS FROM FLICKR API */

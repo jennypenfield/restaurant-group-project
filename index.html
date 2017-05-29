@@ -81,63 +81,70 @@
           <i class='fa fa-heart'><p class ='food-icons'> Vegan</p></i>
         </div>
         <div id='reservationsBody'>
-          <h3>Reservations</h3>
-          <div class='inputContainer'>
-            <input type='text' id='reserv' placeholder='Name'>
-            <input type='text' id='reserv' placeholder='Email'>
-            <input type='text' id='reserv' placeholder='Phone'>
-            <div class="dropdown">
-              <button class="dropbtn">Please select party amount</button>
-              <div class="dropdown-content">
-                <a href="#">Party of one</a>
-                <a href="#">Party of two</a>
-                <a href="#">Party of three</a>
-                <a href="#">Party of four</a>
+          <div class='reservations-left-container'>
+            <h3 style="margin-top:-15px">Reservations</h3><br>
+            <form class='inputContainer'>
+              <input style="margin-bottom:5px" type='text' id='nameInputText' placeholder='Name'><br>
+              <input style="margin-bottom:5px" type='text' id='emailInputText' placeholder='Email'><br>
+              <input type='text' id='phoneInputText' placeholder='Phone'><br>
+              <p style="color:#92140c">How many guests are in your party?</p>
+              <div class="radioPartyBtns">
+                <input type="radio" name='party' value="1"> 1</input>
+                <input type="radio" name='party' value="2"> 2</input>
+                <input type="radio" name='party' value="3"> 3</input>
+                <input type="radio" name='party' value="4"> 4</input>
+                <input type="radio" name='party' value="5"> 5</input>
+                <input type="radio" name='party' value="6"> 6</input>
+                <input type="radio" name='party' value="7"> 7</input>
+                <input type="radio" name='party' value="8"> 8</input>
+                <p style="font-size:12px;color:#92140c">Contact us for parties larger than 8.</p>
               </div>
-            </div>
+              <div class='housing'>
+                <p style="color:#92140c">Please select your table</p>
+                <div class='tables' id='tableContainer'>
+                  <div class='table' id='table_1'></div>
+                  <div class='table' id='table_2'></div>
+                  <div class='table' id='table_3'></div>
+                  <div class='table' id='table_4'></div>
+                  <div class='table' id='table_5'></div>
+                  <div class='table' id='table_6'></div>
+                  <div class='table' id='table_7'></div>
+                  <div class='table' id='table_8'></div>
+                  <div class='table' id='table_9'></div>
+                  <div class='table' id='table_10'></div>
+                  <div class='table' id='table_11'></div>
+                  <div class='table' id='table_12'></div>
+                  <div class='table' id='table_13'></div>
+                  <div class='table' id='table_14'></div>
+                  <div class='table' id='table_15'></div>
+                  <div class='table' id='table_16'></div>
+                  <div class='table' id='table_17'></div>
+                  <div class='table' id='table_18'></div>
+                  <div class='space'></div>
+                  <div class='table' id='table_19'></div>
+                  <div class='table' id='table_20'></div>
+                  <div class='table' id='table_21'></div>
+                  <div class='table' id='table_22'></div>
+                  <div class='table' id='table_23'></div>
+                  <div class='table' id='table_24'></div>
+                  <div class='table' id='table_25'></div>
+                  <div class='table' id='table_26'></div>
+                  <div class='table' id='table_27'></div>
+                  <div class='table' id='table_28'></div>
+                  <div class='table' id='table_29'></div>
+                  <div class='table' id='table_30'></div>
+                  <div class='table' id='table_31'></div>
+                  <div class='table' id='table_32'></div>
+                  <div class='table' id='table_33'></div>
+                  <div class='table' id='table_34'></div>
+                  <div class='table' id='table_35'></div>
+                  <div class='table' id='table_36'></div>
+                </div>
+                <br><input type="button" value='Submit' class='submit-reservation-btn' id='submitReservation'>
+              </div>
+            </form>
           </div>
-          <div class='housing'>
-            <p>Please select your table</p>
-            <div class='tables' id='tableContainer'>
-              <div class='table' id='table_1'></div>
-              <div class='table' id='table_2'></div>
-              <div class='table' id='table_3'></div>
-              <div class='table' id='table_4'></div>
-              <div class='table' id='table_5'></div>
-              <div class='table' id='table_6'></div>
-              <div class='table' id='table_7'></div>
-              <div class='table' id='table_8'></div>
-              <div class='table' id='table_9'></div>
-              <div class='table' id='table_10'></div>
-              <div class='table' id='table_11'></div>
-              <div class='table' id='table_12'></div>
-              <div class='table' id='table_13'></div>
-              <div class='table' id='table_14'></div>
-              <div class='table' id='table_15'></div>
-              <div class='table' id='table_16'></div>
-              <div class='table' id='table_17'></div>
-              <div class='table' id='table_18'></div>
-              <div class='space'></div>
-              <div class='table' id='table_19'></div>
-              <div class='table' id='table_20'></div>
-              <div class='table' id='table_21'></div>
-              <div class='table' id='table_22'></div>
-              <div class='table' id='table_23'></div>
-              <div class='table' id='table_24'></div>
-              <div class='table' id='table_25'></div>
-              <div class='table' id='table_26'></div>
-              <div class='table' id='table_27'></div>
-              <div class='table' id='table_28'></div>
-              <div class='table' id='table_29'></div>
-              <div class='table' id='table_30'></div>
-              <div class='table' id='table_31'></div>
-              <div class='table' id='table_32'></div>
-              <div class='table' id='table_33'></div>
-              <div class='table' id='table_34'></div>
-              <div class='table' id='table_35'></div>
-              <div class='table' id='table_36'></div>
-            </div>
-            <button type='submit' id='submit'>Submit</button>
+          <div class='reservations-right-container'>
           </div>
         </div>
 

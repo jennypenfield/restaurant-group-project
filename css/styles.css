@@ -106,12 +106,12 @@ a .fa {
   }
 
   #newsContent {
-
     border: 0px 2px 2px 2px;
     padding: 1%;
     padding-top:0%;
     text-align: left;
   }
+
   #newsContent::first-letter{
     color: #ff0000;
     font-size: xx-large;
@@ -229,11 +229,31 @@ div.tabs-row button:hover {
 }
 
 #reservationsBody {
+  display: flex;
   padding: 4%;
 }
 
 #commentsReviewsBody {
   padding: 4%;
+}
+
+.submit-reservation-btn {
+  background-color: #92140c;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.reservations-left-container {
+  width: 50%;
+}
+
+.reservations-right-container.active {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding-top: 10%;
+  padding-left: 10%;
 }
 
 .photos-right-container {
