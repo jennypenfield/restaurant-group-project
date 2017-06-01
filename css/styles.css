@@ -53,7 +53,7 @@ a .fa {
 }
 
 #mainImg {
-  box-shadow: 0 0 1em 0.5em #353238;
+  box-shadow: 0 0 1em 0.2em #353238;
   height: 400px;
 }
 .news-specials-location-header {
@@ -77,49 +77,50 @@ a .fa {
   padding-right: 2%;
 }
 
-  h2 {
-    color: #92140c;
-    font-family: 'Helvetica';
-    font-size: 2vw;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    padding-bottom: 2px;
-    text-align: center;
-    border-bottom: 2px solid gray;
-  }
-  h3 {
-    padding-right: 2px;
-    color: #92140c;
-    font-family: 'Helvetica';
-    font-size: 1.7vw;
-    font-weight: bold;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  #newsDate {
-    font-family: 'Helvetica';
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-    padding-top: 0px;
-  }
+h2 {
+  color: #92140c;
+  font-family: 'Helvetica';
+  font-size: 2vw;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  padding-bottom: 2px;
+  text-align: center;
+  border-bottom: 2px solid gray;
+}
 
-  #newsContent {
-    border: 0px 2px 2px 2px;
-    padding: 1%;
-    padding-top:0%;
-    text-align: left;
-  }
+h3 {
+  padding-right: 2px;
+  color: #92140c;
+  font-family: 'Helvetica';
+  font-size: 1.7vw;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+#newsDate {
+  font-family: 'Helvetica';
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
 
-  #newsContent::first-letter{
-    color: #ff0000;
-    font-size: xx-large;
-    padding-right: 2px;
-    color: #92140c;
-    font-family: 'Helvetica';
-    font-size: 2vw;
-    font-weight: bold;
+#newsContent {
+  border: 0px 2px 2px 2px;
+  padding: 1%;
+  padding-top:0%;
+  text-align: left;
+}
+
+#newsContent::first-letter{
+  color: #ff0000;
+  font-size: xx-large;
+  padding-right: 2px;
+  color: #92140c;
+  font-family: 'Helvetica';
+  font-size: 2vw;
+  font-weight: bold;
 }
 
 .daily-special-container {
@@ -133,8 +134,8 @@ a .fa {
 
 #dailySpecialImg {
   box-shadow: 0 0 1em 0.5em #353238;
-  height: 125px;
-  width: 150px;
+  height: 200px;
+  width: 225px;
 }
 
 .google-map-container {
@@ -180,7 +181,6 @@ a .fa {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0px 0px 1em 0.5em #353238;
-
   flex: 9;
   height: 70%;
   overflow-y: auto;
@@ -206,6 +206,7 @@ div.tabs-row button:hover {
 }
 #aboutSubedeiBody{
   margin: 1%;
+  padding: 2%;
   text-align: justify;
 }
 #aboutSubedeiBody::first-letter{
@@ -217,6 +218,10 @@ div.tabs-row button:hover {
   font-size: 2vw;
   font-weight: bold;
   text-align:left;
+}
+
+.satirical-img {
+  width: 80%;
 }
 
 .food-icons {
@@ -249,7 +254,7 @@ div.tabs-row button:hover {
   width: 50%;
 }
 
-.reservations-right-container.active {
+.reservations-right-container {
   border: 1px black solid;
   border-radius: 5px;
   padding-top: 10%;
@@ -312,24 +317,23 @@ footer {
 
 /*Google maps*/
 
-#map{
-  flex:1;
-  width:75%;
+#map {
+  flex: 1;
+  width: 75%;
   margin: 0 auto;
-  height:65%;
-  background-color:gray;
+  height: 65%;
+  background-color: gray;
   box-shadow: 0 2px 5px #353238
 }
 
-.map-location-btn{
+.map-location-btn {
   display: inline-block;
   margin-top: 20px;
   text-align: center;
   box-shadow: 0 1px 5px #353238
 }
 
-
-@media only screen and (max-width: 1224px) {
+@media (max-width: 1224px) {
   #logo {
     height: 70px;
   }
@@ -348,6 +352,11 @@ footer {
 
   #dailySpecial {
     font-size: 0.8em;
+  }
+
+  #dailySpecialImg {
+    height: 120px;
+    width: 150px;
   }
 
   #aboutSubedeiBody {
@@ -379,7 +388,7 @@ footer {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   #logo {
     height: 60px;
   }
@@ -455,7 +464,20 @@ footer {
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
+  header {
+    flex: 0.2;
+    padding: 1em;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 260vh;
+    max-width: 100%;
+    width: 100vw;
+  }
+
   #logo {
     height: 50px;
   }
@@ -464,30 +486,59 @@ footer {
     font-size: 20px;
   }
 
+  .satirical-img {
+    height: 100px;
+  }
+
+  .main-img-container {
+    flex: 0.7;
+  }
+
   #mainImg {
-    height: 220px;
-    width: 300px;
+    height: 200px;
   }
 
-  #newsHead {
-    font-size: 0.9em;
-  }
-
-  #newsContent {
-    font-size: 0.7em;
-  }
-
-  #dailySpecial {
-    font-size: 0.7em;
+  .news-specials-location-container {
+    flex-direction: column;
   }
 
   #dailySpecialImg {
-    height: 150px;
-    width: 175px;
+    height: 200px;
+    width: 200px;
+  }
+  #map {
+    height:65%;
+  }
+
+  .tabs-photos-container {
+    background-image: linear-gradient(#92140c, #bd1b0f);
+    flex: 1.5;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+    padding: 2%;
   }
 
   .tab-links {
+    flex: 1;
     font-size: 6px;
+  }
+
+  .photos-right-container {
+    flex: 0;
+  }
+
+  #rightPhoto1 {
+    display: none;
+  }
+
+  #rightPhoto2 {
+    display: none;
+  }
+
+  #rightPhoto3 {
+    display: none;
   }
 
   #aboutSubedeiBody {
@@ -503,6 +554,7 @@ footer {
   }
 
   footer {
+    flex: 0.2;
     font-size: 0.5em;
   }
 }
