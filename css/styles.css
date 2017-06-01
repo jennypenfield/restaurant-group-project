@@ -221,6 +221,7 @@ div.tabs-row button:hover {
 }
 
 .satirical-img {
+  margin-left: 10%;
   width: 80%;
 }
 
@@ -255,7 +256,6 @@ div.tabs-row button:hover {
 }
 
 .reservations-right-container {
-  border-radius: 5px;
   padding-top: 10%;
   padding-left: 10%;
 }
